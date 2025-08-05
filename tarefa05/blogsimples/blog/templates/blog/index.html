@@ -1,0 +1,13 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    <h2>Todos os Posts</h2>
+    {% for post in posts %}
+        <div class="post-item">
+            <h3><a href="{{ post.get_absolute_url }}">{{ post.titulo }}</a></h3>
+            <p>Publicado em: {{ post.data_publicacao|date:"d/m/Y H:i" }}</p>
+        </div>
+    {% empty %}
+        <p>Ainda não há posts no blog.</p>
+    {% endfor %}
+{% endblock %}

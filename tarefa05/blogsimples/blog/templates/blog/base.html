@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Meu Blog</title>
+    <style>
+        body { font-family: sans-serif; margin: 0; }
+        header { background-color: #333; color: white; padding: 20px; text-align: center; }
+        header a { color: white; text-decoration: none; }
+        footer { background-color: #f2f2f2; padding: 10px; text-align: center; position: fixed; bottom: 0; width: 100%; }
+        main { padding: 20px; margin-bottom: 60px; }
+        .post-item { border-bottom: 1px solid #ccc; padding-bottom: 15px; margin-bottom: 15px; }
+        .post-detail img { max-width: 100%; height: auto; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1><a href="{% url 'index' %}">Blog de Felipe</a></h1>
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>Desenvolvido por Felipe.</p>
+    </footer>
+</body>
+</html>
